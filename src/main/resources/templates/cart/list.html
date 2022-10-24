@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <table>
+    <tr>
+      <th>장바구니 번호</th>
+      <th>로그인 아이디</th>
+      <th>제품 아이디</th>
+      <th>제품명</th>
+      <th>상점 이미지명</th>
+      <th>색상</th>
+      <th>크기</th>
+      <th>수량</th>
+      <th>총액</th>
+
+    </tr>
+    <tr th:each="i:${list}">
+      <td th:text="${i.loginId}">  </td>
+      <td th:text="${i.productId}">  </td>
+
+    </tr>
+  </table>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="springboot.sm.mapper.BasketMapper">
+
+    <select id="findBasketAll" resultType="springboot.sm.domain.Basket">
+        select * from basket
+    </select>
+
+    <insert id="addBasket" parameterType="springboot.sm.domain.Basket">
+        insert into basket values(cartId,#{loginId},#{productId},#{productName},#{storeImageName},#{color},#{size},#{count},#{price},#{calSum})
+    </insert>
+
+    <delete id="deleteBasket" parameterType="int">
+        delete from basket where cartId=#{cartId}
+    </delete>
+
+    <delete id="deleteAllBasket">
+        delete from basket
+    </delete>
+
+    <select id="findLoginIdByCartId" parameterType="int" resultType="String">
+        select loginId from basket where cartId=#{cartId}
+    </select>
+
+</mapper>
